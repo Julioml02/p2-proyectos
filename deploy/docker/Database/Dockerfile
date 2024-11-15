@@ -1,7 +1,7 @@
 FROM mongo
 
-MAINTAINER juliens@microsoft.com
+COPY drop/* usr/local/data/db/
 
-COPY drop/* /tmp/
-
+#es como Entrypoint, pero CMD se puede sobreescribir con otro al 
+#ejecutar el contenedor
 CMD ["mongod", "--smallfiles", "--rest"]
